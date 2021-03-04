@@ -16,3 +16,7 @@ reseracrher is studying the effects of inhibition of a disease causing target pr
 of a unseen compund. This model will use the derived features of over 9000 compunds preciously tested for thier ability to inhibit the target protein, Beta Secratese 1, which is 
 measured by pIC50. The descriptors, 1-D and 2-D descriptors that desribe the molecules' physical composition, will be drived using 3rd party software, PaDEL and will be modeled in 
 2 seperate ways: a model to predict whether a compound will be active (inhibits protein) or inactive (displays no significant effect on a protein), as well as a regression model 
+that would predict the actual pIC50 value of the supplied compound. 
+
+## Method
+  This machine learning application 
