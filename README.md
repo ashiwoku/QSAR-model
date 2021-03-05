@@ -19,4 +19,5 @@ measured by pIC50. The descriptors, 1-D and 2-D descriptors that desribe the mol
 that would predict the actual pIC50 value of the supplied compound. 
 
 ## Method
-  This machine learning application 
+  This machine learning application starts off with over 9000 chemical compounds that have been tested to inhibit the Beta Secratese 1 protein from the Chembl database. It is important whenver one uses wants to derive conclusions of significance on a dataset, we use valid observations to train our model. In this instance, we must make sure that the 
+compounds we use for training 
