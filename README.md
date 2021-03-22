@@ -45,10 +45,10 @@ sure that all features are scaled to fit a standard normal distribution was very
 
 | Classification Model | Precison (Majority) | Recall (Majority) | Precision (Minority) | Recall (Minority) |
 | -------------------- |        :----:       |      :----:       |          :----:      |       :----:       |
-| Logistic Regression  |                     |                   |                      |                    |
-| Support Vector Machine |                    |                    |                      |                    |
-| Random Forest         |                    |                   |                       |                    |
-| Deep Neural Netwrok   |                    |                   |                       |                    |
+| Logistic Regression  |       0.87         |       0.96         |     0.39             |         0.16      |
+| Support Vector Machine |        0.94      |     0.92           |       0.58           |         0.65       |
+| Random Forest         |      0.95          |        0.96       |         0.78          |         0.7        |
+| Deep Neural Netwrok   |         0.91        |       0.97         |       0.71           |       0.41          |
 
 
 | Regression Model | Precison (Majority) | Recall (Majority) | Precision (Minority) | Recall (Minority) |
