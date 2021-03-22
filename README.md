@@ -14,9 +14,9 @@ can use these models for onitoring important chemical- protein activities, espec
   A QSAR (quantitaive-structured activity relationship) model helps researhcers predict whether a given chemical compound's potentila activity on a target protein. If a 
 reseracrher is studying the effects of inhibition of a disease causing target protein, they can use past experimental compunds to train a model to predict the biological activity 
 of a unseen compund. This model will use the derived features of over 9000 compunds preciously tested for thier ability to inhibit the target protein, Beta Secratese 1, which is 
-measured by pIC50. The descriptors, 1-D and 2-D descriptors that desribe the molecules' physical composition, will be drived using 3rd party software, PaDEL and will be modeled in 
-2 seperate ways: a model to predict whether a compound will be active (inhibits protein) or inactive (displays no significant effect on a protein), as well as a regression model 
-that would predict the actual pIC50 value of the supplied compound. 
+measured by pIC50. The descriptors, 1-D and 2-D descriptors that desribe the molecules' physical composition, will be drived using 3rd party software, PaDEL and will be modeled 
+in 2 seperate ways: a model to predict whether a compound will be active (inhibits protein) or inactive (displays no significant effect on a protein), as well as a regression 
+model that would predict the actual pIC50 value of the supplied compound. 
 
 ## Method
   This machine learning application starts off with over 9000 chemical compounds that have been tested to inhibit the Beta Secratese 1 protein from the Chembl database. It is
@@ -28,4 +28,34 @@ compounds we use for training meet requirements for viable drug candidiates. To 
 * No more than 10 hydrogen bond acceptors 
 * Log P (Octogonal water partition coeffecient) is no greater than 5 
 
-When it comes to feature engineering, or descriptors that modeled physical attrivutes of the molecules, we used the PaDel descriptor software to construct a library of molecular descriptors. The library was quite large 
+When it comes to feature engineering, or descriptors that modeled physical attrivutes of the molecules, we used the PaDel descriptor software to construct a library of molecular descriptors. The library was quite large a feature selection process wa used to choose the final subset of descriptors:
+
+* Remove descriptors that have a low variance threshold (less than 15%)
+* Remove desciptors that show strong collinearity with other descriptors (will help with overfitting)
+* Utilize backward elimnination to choose the best subset of features that minimize overfitting in the model 
+
+After the feature selection process, a slight correction was needed for the classification model: **removal of chemical compounds that where neither active or inactive**. This will make the clssification task easier on the model, as the model will need only to predict the 2 classes.
+
+## Model Building and Performance
+  After obtaining our model ready data, it was time to find the best model for both datasets: the classification and regresion model. For reach model type, 4 models were compared: for regression, we used MLR (Multiple Linear Regresion), Polynomial Regression, Support vector Regression, and a deep neural network; for classification, the models 
+used were support vector machine, Logistic Regression, deep neural network, and Random Forest. During the training for these models, we made sure to withhold a portion of the 
+data to validate model results. We also used SMOTE analysis to generate samples of the minority class to improve predictability of the minority class. For regression, making 
+sure that all features are scaled to fit a standard normal distribution was very importan for achieving opptimal model performance. adnwas achieved by using sklearn's 
+*StandardScaler*. After runnign the models, thier results were as follows: 
+
+| Classification Model | Precison (Majority) | Recall (Majority) | Precision (Minority) | Recall (Minority) |
+| -------------------- |        :----:       |      :----:       |          :----:      |       :----:       |
+| Logistic Regression  |                     |                   |                      |                    |
+| Support Vector Machine |                    |                    |                      |                    |
+| Random Forest         |                    |                   |                       |                    |
+| Deep Neural Netwrok   |                    |                   |                       |                    |
+
+
+| Regression Model | Precison (Majority) | Recall (Majority) | Precision (Minority) | Recall (Minority) |
+| -------------------- |        :----:       |      :----:       |          :----:      |       :----:       |
+| Multiple Linear Regression  |                     |                   |                      |                    |
+| Polynomial Regression |                    |                    |                      |                    |
+| Support Vector Regression    |                    |                   |                       |                    |
+| Deep Neural Netwrok   |                    |                   |                       |                    |
+
+
