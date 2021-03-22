@@ -47,7 +47,7 @@ sure that all features are scaled to fit a standard normal distribution was very
 | -------------------- |        :----:       |      :----:       |          :----:      |       :----:       |
 | Logistic Regression  |       0.87         |       0.96         |     0.39             |         0.16      |
 | Support Vector Machine |        0.94      |     0.92           |       0.58           |         0.65       |
-| **Random Forest         |      0.95          |        0.96       |         0.78          |         0.7**        |
+| **Random Forest**         |      **0.95**          |        **0.96**       |         **0.78**          |         **0.7**        |
 | Deep Neural Netwrok   |         0.91        |       0.97         |       0.71           |       0.41          |
 
 
@@ -55,7 +55,7 @@ sure that all features are scaled to fit a standard normal distribution was very
 | -------------------- |        :----:       |      :----:             |       
 | Multiple Linear Regression  |       0.781       |              0.986           |                  
 | Polynomial Regression |       0.926           |            64.276               |                  
-| **Support Vector Regression    |     0.608        |             0.821**            |               
+| **Support Vector Regression**    |     **0.608**        |           **0.821**            |               
 | Deep Neural Netwrok   |        0.845            |        1.225                 |                     
 
 
