@@ -19,5 +19,13 @@ measured by pIC50. The descriptors, 1-D and 2-D descriptors that desribe the mol
 that would predict the actual pIC50 value of the supplied compound. 
 
 ## Method
-  This machine learning application starts off with over 9000 chemical compounds that have been tested to inhibit the Beta Secratese 1 protein from the Chembl database. It is important whenver one uses wants to derive conclusions of significance on a dataset, we use valid observations to train our model. In this instance, we must make sure that the 
-compounds we use for training 
+  This machine learning application starts off with over 9000 chemical compounds that have been tested to inhibit the Beta Secratese 1 protein from the Chembl database. It is
+important whenver one uses wants to derive conclusions of significance on a dataset, we use valid observations to train our model. In this instance, we must make sure that the 
+compounds we use for training meet requirements for viable drug candidiates. To ensure this, we use the **Lipinksi Rule of 5**:
+
+* Moleculr mass less than 500 daltons
+* No more than 5 hydrogen bond donors
+* No more than 10 hydrogen bond acceptors 
+* Log P (Octogonal water partition coeffecient) is no greater than 5 
+
+When it comes to feature engineering, or descriptors that modeled physical attrivutes of the molecules, we used the PaDel descriptor software to construct a library of molecular descriptors. The library was quite large 
