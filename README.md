@@ -41,10 +41,10 @@ After the feature selection process, a slight correction was needed for the clas
 used were support vector machine, Logistic Regression, deep neural network, and Random Forest. During the training for these models, we made sure to withhold a portion of the 
 data to validate model results. We also used SMOTE analysis to generate samples of the minority class to improve predictability of the minority class. For regression, making 
 sure that all features are scaled to fit a standard normal distribution was very importan for achieving opptimal model performance. adnwas achieved by using sklearn's 
-*StandardScaler*. After runnign the models, thier results were as follows: 
+*StandardScaler*. After running the models, thier results were as follows: 
 
 | Classification Model | Precison (Majority) | Recall (Majority) | Precision (Minority) | Recall (Minority) |
-| -------------------- |        :----:       |      :----:       |          :----:      |       :----:       |
+| -------------------- |        :----:       |      :----:       |          :----:      |       :----:      |
 | Logistic Regression  |       0.87         |       0.96         |     0.39             |         0.16      |
 | Support Vector Machine |        0.94      |     0.92           |       0.58           |         0.65       |
 | **Random Forest**         |      **0.95**          |        **0.96**       |         **0.78**          |         **0.7**        |
@@ -52,10 +52,28 @@ sure that all features are scaled to fit a standard normal distribution was very
 
 
 | Regression Model | Mean Absolute Error     | Root Mean Sqaured error | 
-| -------------------- |        :----:       |      :----:             |       
+| ---------------- |          :----:         |        :----:           |       
 | Multiple Linear Regression  |       0.781       |              0.986           |                  
-| Polynomial Regression |       0.926           |            64.276               |                  
-| **Support Vector Regression**    |     **0.608**        |           **0.821**            |               
+| Polynomial Regression |       0.926           |            64.276              |                  
+| **Support Vector Regression**    |     **0.608**      |       **0.821**        |               
 | Deep Neural Netwrok   |        0.845            |        1.225                 |                     
 
+## Conclusion
+  As you can see the models that perfomed the best don't rely on a linear relationship. The random forest is a powerful algorithm that makes it easy to achieve favorbale 
+preditatbility in most cases with limited optimization required. They fit well to the training data, but like the support vector regression model chosen, they are "black box" 
+algorithms: they don't allow researchers to see how the model adjusts as the training data changes. Due to this fact, further improvement of the feature selection may allow for 
+better fit with less powerful algorithms such as multiple linear regression models. These models allow for us to better monitor how the model changes as the training data is further updated. 
 
+## Further Improvements 
+  Making improvements for the feature engineering process, such as analyzing the class of descriptors rather than individual descriptors which may improve the explanability of 
+the model. During the data collection, only one public database, ChemBl, was looked at. There are several databases that contain biological activity data, and they can be 
+searched to build our training model. Even including compunds that will increase compunds of the inactive class will be helpful in improving perfomance. The ultimate goal for an 
+application such as this is for the scientific commmunity to be able to use this model, so a future update will be to host this model within a web application so that 
+researchers can apply this to thier research. This project utilised descriptors that descriped the stuctural components of the compunds. Future improvements may perform 
+experiments that utilise descriptors that describe the electro-magnetic nature of the compounds. These descriptors fall into the class of descriptors labeled 3D descriptors. 
+
+## Credit & Contact 
+  This model was inspired by a youtube series led by Dr. Chanin Nantasenamat, Ph.D. A link to his channel is [here](https://www.youtube.com/c/DataProfessor/featured)
+  
+  I would love to hear feedback from anyone who discovers this project to learn on other improvements I could make or if you have questions on my though process. Please forward 
+  your thoughts to my email:  **abolajishiwoku@yahoo.com**
