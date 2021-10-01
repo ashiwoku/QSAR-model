@@ -18,7 +18,6 @@ measured by pIC50. The descriptors, 1-D and 2-D descriptors that describe the mo
 in 2 separate ways: a model to predict whether a compound will be active (inhibits protein) or inactive (displays no significant effect on a protein), as well as a regression 
 model that would predict the actual pIC50 value of the supplied compound.
 
-
 ## Method
   This machine learning application starts off with over 9000 chemical compounds that have been tested to inhibit the Beta Secretase 1 protein from the Chembl database. It is
 important whenever one uses wants to derive conclusions of significance on a dataset, we use valid observations to train our model. In this instance, we must make sure that the 
@@ -64,8 +63,10 @@ sure that all features are scaled to fit a standard normal distribution was very
 The random forest is a powerful algorithm that makes it easy to achieve favorable 
 predictability in most cases with limited optimization required. They fit well to the training data, but like the support vector regression model chosen, they are "black box" 
 algorithms: they don't allow researchers to see how the model adjusts as the training data changes. Due to this fact, further improvement of the feature selection may allow for 
-better fit with less powerful algorithms such as multiple linear regression models. These models allow for us to better monitor how the model changes as the training data is further updated.           
+better fit with less powerful algorithms such as multiple linear regression models. These models allow for us to better monitor how the model changes as the training data is further updated.    
 
+## Assumptions and Limitations 
+This model was trained using around 9000 compounds, a large amount but nearly enough to represent the full number of compounds that are present in the full chemical space. As it currently stands, proper application of this model will require researchers to test compounds have similar physical characteristics with the compounds in the training set. The use of statistical measures and stepwise elimination relies of statistical methods to determine which chemical compounds are relevant for training. It is possible that during this process, certain important compounds were removed that would have provided ample information to the model. 
 
 ## Further Improvements 
   Making improvements for the feature engineering process, such as analyzing the class of descriptors rather than individual descriptors which may improve the interpretation of 
